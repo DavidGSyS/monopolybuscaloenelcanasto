@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#favBg)"/>
+  <!-- Mini canasto y moneda -->
+  <path d="M12 28 L52 28 L46 50 C45 53 42 55 39 55 L25 55 C22 55 19 53 18 50 Z" 
+        fill="#5B21B6" stroke="#C4B5FD" stroke-width="2"/>
+  <circle cx="32" cy="28" r="14" fill="url(#favGold)" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="32" y="34" font-family="system-ui, sans-serif" font-weight="900" font-size="16" fill="#4C1D95" text-anchor="middle">₵</text>
+</svg>

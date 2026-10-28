@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-purple: #6d28d9;
+  --color-brand-purple-dark: #4c1d95;
+  --color-brand-purple-light: #f5f3ff;
+  --color-brand-purple-accent: #8b5cf6;
+
+  --color-brand-yellow: #f59e0b;
+  --color-brand-yellow-dark: #b45309;
+  --color-brand-yellow-light: #fef3c7;
+
+  --color-brand-coral: #f43f5e;
+  --color-brand-coral-dark: #be123c;
+  --color-brand-coral-light: #ffe4e6;
+
+  --color-brand-mint: #10b981;
+  --color-brand-mint-dark: #047857;
+  --color-brand-mint-light: #d1fae5;
+
+  --color-surface-bg: #f8fafc;
+  --color-surface-card: #ffffff;
+  --color-surface-border: #e2e8f0;
+
+  --shadow-soft-card: 0 10px 25px -5px rgba(109, 40, 217, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-soft-glow: 0 14px 30px -4px rgba(109, 40, 217, 0.22);
+  --shadow-coral-glow: 0 10px 25px -5px rgba(244, 63, 94, 0.25);
+  --shadow-mint-glow: 0 10px 25px -5px rgba(16, 185, 129, 0.25);
+  --shadow-yellow-glow: 0 10px 25px -5px rgba(245, 158, 11, 0.25);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  -webkit-tap-highlight-color: transparent;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Scroll suave y visuales de tarjetas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Micro-animación de pulsación sutil para juego */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 4s ease-in-out infinite;
 }

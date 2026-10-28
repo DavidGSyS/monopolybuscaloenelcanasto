@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo con bordes redondeados tipo app moderna -->
+  <rect width="192" height="192" rx="42" fill="url(#bgGradient)"/>
+  
+  <!-- Círculos decorativos sutiles de juego -->
+  <circle cx="150" cy="42" r="14" fill="#10B981" opacity="0.4"/>
+  <circle cx="42" cy="150" r="10" fill="#F43F5E" opacity="0.4"/>
+  <circle cx="156" cy="144" r="8" fill="#F59E0B" opacity="0.35"/>
+
+  <!-- Canasto / Bóveda estilizada -->
+  <g transform="translate(36, 40)">
+    <!-- Base canasto -->
+    <path d="M12 40 L108 40 L98 94 C96 102 90 108 82 108 L38 108 C30 108 24 102 22 94 Z" 
+          fill="#5B21B6" stroke="#C4B5FD" stroke-width="4" stroke-linejoin="round"/>
+    <!-- Asa del canasto -->
+    <path d="M30 40 C30 14 90 14 90 40" 
+          fill="none" stroke="#FDE047" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- Moneda central flotante de juego con brillo -->
+    <circle cx="60" cy="50" r="28" fill="url(#goldGradient)" stroke="#FFFFFF" stroke-width="3.5"/>
+    <!-- Símbolo monetario de Canasto Bank (₵ estilizada) -->
+    <text x="60" y="59" font-family="system-ui, sans-serif" font-weight="900" font-size="28" fill="#4C1D95" text-anchor="middle">₵</text>
+  </g>
+</svg>

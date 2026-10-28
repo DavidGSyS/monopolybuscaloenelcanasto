@@ -1,0 +1,52 @@
+import React from "react";
+import { Badge } from "./Badge";
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-30 w-full backdrop-blur-md bg-white/85 border-b border-slate-100/80 transition-all">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* Logotipo y Título de Marca */}
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-purple-dark to-brand-purple flex items-center justify-center shadow-sm text-white shrink-0">
+            <svg
+              className="w-6 h-6 text-brand-yellow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 10h16l-2 10H6L4 10z" />
+              <path d="M8 10V6a4 4 0 0 1 8 0v4" />
+              <circle cx="12" cy="14" r="2" fill="currentColor" />
+            </svg>
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight">
+                Canasto<span className="text-brand-purple">Bank</span>
+              </span>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-brand-yellow-light text-amber-900">
+                Alpha
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
+              Tu mesa, tus reglas
+            </p>
+          </div>
+        </div>
+
+        {/* Indicadores de Modo y PWA */}
+        <div className="flex items-center gap-2">
+          <Badge variant="mint" dot>
+            PWA Ready
+          </Badge>
+          <div className="hidden sm:flex items-center text-xs font-semibold text-slate-600 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200/60">
+            <span>Offline First</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

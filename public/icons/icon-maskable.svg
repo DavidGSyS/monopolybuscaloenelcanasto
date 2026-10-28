@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradientMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#3B0764"/>
+    </linearGradient>
+    <linearGradient id="goldGradientMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Safe zone for maskable icon: full bleed background -->
+  <rect width="512" height="512" fill="url(#bgGradientMask)"/>
+  
+  <g transform="translate(136, 136)">
+    <!-- Base canasto -->
+    <path d="M24 81 L216 81 L196 187 C192 204 180 216 163 216 L77 216 C60 216 48 204 44 187 Z" 
+          fill="#5B21B6" stroke="#C4B5FD" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M60 81 C60 28 180 28 180 81" 
+          fill="none" stroke="#FDE047" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Moneda central -->
+    <circle cx="120" cy="100" r="56" fill="url(#goldGradientMask)" stroke="#FFFFFF" stroke-width="6"/>
+    <text x="120" y="120" font-family="system-ui, sans-serif" font-weight="900" font-size="58" fill="#4C1D95" text-anchor="middle">₵</text>
+  </g>
+</svg>
