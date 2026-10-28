@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -14,20 +15,15 @@ export function IOSInstallGuide({ onContinue }: IOSInstallGuideProps) {
     <div className="min-h-screen bg-surface-bg flex flex-col justify-between p-4 sm:p-6 max-w-lg mx-auto">
       {/* Encabezado y Marca */}
       <header className="text-center pt-2 sm:pt-4 space-y-3">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-gradient-to-tr from-brand-purple-dark to-brand-purple shadow-soft-glow mb-1">
-          <svg
-            className="w-9 h-9 text-brand-yellow"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 10h16l-2 10H6L4 10z" />
-            <path d="M8 10V6a4 4 0 0 1 8 0v4" />
-            <circle cx="12" cy="14" r="2" fill="currentColor" />
-          </svg>
+        <div className="inline-flex items-center justify-center mb-1">
+          <Image
+            src="/icons/icon-192.png"
+            alt="Canasto Bank Icono"
+            width={72}
+            height={72}
+            className="w-18 h-18 rounded-3xl object-cover shadow-soft-glow"
+            priority
+          />
         </div>
 
         <div>

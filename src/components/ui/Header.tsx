@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Badge } from "./Badge";
 
 interface HeaderProps {
@@ -12,21 +13,14 @@ export function Header({ isStandalone = false, onShowInstallGuide }: HeaderProps
       <div className="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logotipo y Título de Marca */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-purple-dark to-brand-purple flex items-center justify-center shadow-sm text-white shrink-0">
-            <svg
-              className="w-6 h-6 text-brand-yellow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4 10h16l-2 10H6L4 10z" />
-              <path d="M8 10V6a4 4 0 0 1 8 0v4" />
-              <circle cx="12" cy="14" r="2" fill="currentColor" />
-            </svg>
-          </div>
+          <Image
+            src="/icons/icon-192.png"
+            alt="Canasto Bank"
+            width={40}
+            height={40}
+            className="w-10 h-10 rounded-2xl object-cover shadow-sm shrink-0"
+            priority
+          />
           <div>
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight">

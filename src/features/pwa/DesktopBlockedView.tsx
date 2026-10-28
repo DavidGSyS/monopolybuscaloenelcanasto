@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useSyncExternalStore } from "react";
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -40,20 +41,15 @@ export function DesktopBlockedView({
     <div className="min-h-screen bg-surface-bg flex flex-col items-center justify-center p-6 text-slate-900">
       <div className="max-w-md w-full space-y-6 text-center">
         {/* Logotipo Canasto Bank */}
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-tr from-brand-purple-dark to-brand-purple shadow-soft-glow mx-auto">
-          <svg
-            className="w-12 h-12 text-brand-yellow"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 10h16l-2 10H6L4 10z" />
-            <path d="M8 10V6a4 4 0 0 1 8 0v4" />
-            <circle cx="12" cy="14" r="2" fill="currentColor" />
-          </svg>
+        <div className="inline-flex items-center justify-center mx-auto">
+          <Image
+            src="/icons/icon-192.png"
+            alt="Canasto Bank Icono Oficial"
+            width={84}
+            height={84}
+            className="w-21 h-21 rounded-3xl object-cover shadow-soft-glow"
+            priority
+          />
         </div>
 
         {/* Título y Mensaje Exclusivo Móvil */}
