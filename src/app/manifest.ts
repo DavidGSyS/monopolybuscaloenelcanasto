@@ -25,6 +25,12 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "any",
       },
       {
+        src: "/icons/app-icon.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
         src: "/icons/icon-maskable.svg",
         sizes: "512x512",
         type: "image/svg+xml",

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/ui/Header";
 
 const fontSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -29,8 +28,12 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icons/icon-192.svg", sizes: "192x192", type: "image/svg+xml" },
       { url: "/icons/icon-512.svg", sizes: "512x512", type: "image/svg+xml" },
+      { url: "/icons/app-icon.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/icons/icon-192.svg", sizes: "192x192" }],
+    apple: [
+      { url: "/icons/app-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/icons/icon-192.svg", sizes: "192x192" },
+    ],
   },
   appleWebApp: {
     capable: true,
@@ -68,8 +71,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${fontSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-surface-bg text-slate-900 selection:bg-brand-purple-light selection:text-brand-purple">
-        <Header />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full flex flex-col">{children}</main>
       </body>
     </html>
   );

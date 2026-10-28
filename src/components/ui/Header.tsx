@@ -1,9 +1,14 @@
 import React from "react";
 import { Badge } from "./Badge";
 
-export function Header() {
+interface HeaderProps {
+  isStandalone?: boolean;
+  onShowInstallGuide?: () => void;
+}
+
+export function Header({ isStandalone = false, onShowInstallGuide }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 w-full backdrop-blur-md bg-white/85 border-b border-slate-100/80 transition-all">
+    <header className="sticky top-0 z-30 w-full backdrop-blur-md bg-white/90 border-b border-slate-100/80 transition-all">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logotipo y Título de Marca */}
         <div className="flex items-center gap-3">
@@ -39,12 +44,26 @@ export function Header() {
 
         {/* Indicadores de Modo y PWA */}
         <div className="flex items-center gap-2">
-          <Badge variant="mint" dot>
-            PWA Ready
-          </Badge>
-          <div className="hidden sm:flex items-center text-xs font-semibold text-slate-600 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200/60">
-            <span>Offline First</span>
-          </div>
+          {isStandalone ? (
+            <Badge variant="mint" dot>
+              App Instalada
+            </Badge>
+          ) : (
+            <>
+              {onShowInstallGuide && (
+                <button
+                  onClick={onShowInstallGuide}
+                  className="text-xs font-semibold text-brand-purple bg-brand-purple-light hover:bg-purple-100 px-3 py-1.5 rounded-xl border border-purple-200/80 transition-colors flex items-center gap-1.5 cursor-pointer"
+                >
+                  <span>📲</span>
+                  <span className="hidden xs:inline">Instalar</span>
+                </button>
+              )}
+              <div className="flex items-center text-xs font-semibold text-slate-600 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200/60">
+                <span>Offline First</span>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </header>
