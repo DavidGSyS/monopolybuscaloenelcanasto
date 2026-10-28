@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { GameProvider } from "@/features/game/GameContext";
 
 const fontSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -72,7 +73,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${fontSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-surface-bg text-slate-900 selection:bg-brand-purple-light selection:text-brand-purple">
-        <main className="flex-1 w-full flex flex-col">{children}</main>
+        <GameProvider>
+          <main className="flex-1 w-full flex flex-col">{children}</main>
+        </GameProvider>
       </body>
     </html>
   );

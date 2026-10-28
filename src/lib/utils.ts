@@ -14,6 +14,7 @@ export function cn(...classes: (string | undefined | null | false)[]): string {
  */
 export function formatMoney(amount: number, symbol: string = "₵"): string {
   const formatted = new Intl.NumberFormat("es-ES", {
+    useGrouping: true,
     maximumFractionDigits: 0,
   }).format(amount);
 
