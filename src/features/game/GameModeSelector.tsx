@@ -8,14 +8,24 @@ import { Button } from "@/components/ui/Button";
 
 interface GameModeSelectorProps {
   onSelectMode?: (modeId: string) => void;
+  onStartLocal?: () => void;
 }
 
-export function GameModeSelector({ onSelectMode }: GameModeSelectorProps) {
+export function GameModeSelector({ onSelectMode, onStartLocal }: GameModeSelectorProps) {
   const [selected, setSelected] = useState<string>("local");
 
   const handleSelect = (id: string) => {
     setSelected(id);
     onSelectMode?.(id);
+  };
+
+  const handleButtonClick = (modeId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (modeId === "local" && onStartLocal) {
+      onStartLocal();
+    } else {
+      handleSelect(modeId);
+    }
   };
 
   return (
@@ -113,6 +123,7 @@ export function GameModeSelector({ onSelectMode }: GameModeSelectorProps) {
                 <Button
                   size="sm"
                   variant={isLocal ? "primary" : "outline"}
+                  onClick={(e) => handleButtonClick(mode.id, e)}
                 >
                   {isLocal ? "Comenzar partida" : "Ver detalles"}
                 </Button>
